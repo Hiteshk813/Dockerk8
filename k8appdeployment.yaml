@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerapp-k8-deployment
+  labels:
+    app: dockerapp-k8
+spec:
+  selector:
+    matchLabels:
+      app: dockerapp-k8
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dockerapp-k8
+    spec:
+      containers:
+        - name: dockerapp-k8
+          image: hiteshk813/sbapp
+          ports:
+            - containerPort: 8080

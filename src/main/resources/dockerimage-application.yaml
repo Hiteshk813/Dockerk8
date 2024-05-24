@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: dockerimage
+      image: dockerimage:latest
+      ports:
+        - containerPort: 8080   # Set the container port
+          hostPort: 80           # Set the host port
